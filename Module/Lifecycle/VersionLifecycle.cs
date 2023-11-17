@@ -1,4 +1,6 @@
-﻿namespace sk_news_batch.Module.Lifecycle
+﻿using sk_news_batch.Service;
+
+namespace sk_news_batch.Module.Lifecycle
 {
     public class VersionLifecycle : Lifecycle
     {
@@ -11,8 +13,7 @@
 
         public void Execute()
         {
-            //TODO version display
-            return;
+            Console.Write(ServiceProvider.VersionProvider.Version);
         }
     }
 }
