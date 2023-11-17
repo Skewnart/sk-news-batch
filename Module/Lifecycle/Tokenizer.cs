@@ -19,14 +19,8 @@
                 {
                     if (arg.StartsWith("-"))
                     {
-                        char[] subargs = arg.Skip(1).ToArray();
-                        foreach (char subarg in subargs)
-                        {
-                            if (!char.IsLetter(subarg))
-                                throw new Exception($"Bad sub-argument found : \"{arg}\" -> \"{subarg}\"");
-
-                            tokenslist.Add($"-{subarg}");
-                        }
+                        //Extract each argument ("-tcv" into "-t -c -v")
+                        tokenslist.AddRange(arg.Skip(1).Select(subarg => $"-{subarg}"));
                     }
                     else
                     {

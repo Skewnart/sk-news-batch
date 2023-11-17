@@ -4,19 +4,14 @@
     {
         public void CheckArgs(string[] args)
         {
-            // Faire la vérification que les args sont grammaticallement et sémantiquement corrects.
-            throw new NotImplementedException();
+            if (args?.Length > 0) throw new Exception("Version lifecycle can't have arguments");
         }
 
-        public void Init(string[] args)
-        {
-            return;
-        }
+        public void Init(string[] args) { }
 
         public void Execute()
         {
-            //Ici faire l'affichage de la version
-
+            //TODO version display
             return;
         }
     }
