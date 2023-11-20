@@ -1,10 +1,12 @@
-﻿namespace sk_news_batch.Module.Lifecycle
+﻿using sk_news_batch.Exception;
+
+namespace sk_news_batch.Module.Lifecycle
 {
     public class HelpLifecycle : Lifecycle
     {
         public void CheckArgs(string[] args)
         {
-            if (args?.Length > 0) throw new Exception("Version lifecycle can't have arguments");
+            if (args?.Length > 0) throw new ProhibitedArgsException("Helper lifecycle");
         }
 
         public void Execute() { }

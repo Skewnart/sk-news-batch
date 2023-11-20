@@ -1,3 +1,4 @@
+using sk_news_batch.Exception;
 using sk_news_batch.Module.Lifecycle;
 using sk_news_batch.Service;
 
@@ -11,7 +12,7 @@ namespace sk_news_batch_tests.Module.Lifecycle
         {
             string[] args = { "-t" };
             var versionLifecycle = new VersionLifecycle();
-            Assert.ThrowsException<Exception>(() => versionLifecycle.CheckArgs(args));
+            Assert.ThrowsException<ProhibitedArgsException>(() => versionLifecycle.CheckArgs(args));
         }
 
         [TestMethod]

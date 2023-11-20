@@ -1,4 +1,6 @@
-﻿namespace sk_news_batch.Module.Lifecycle
+﻿using sk_news_batch.Exception;
+
+namespace sk_news_batch.Module.Lifecycle
 {
     public class LifecycleChooser
     {
@@ -36,7 +38,7 @@
                     chosen = new HelpLifecycle();
                     break;
                 default :
-                    throw new Exception("No lifecycle choosen");
+                    throw new MissingLifecycleException();
             }
 
             chosen.CheckArgs(extracted_args);

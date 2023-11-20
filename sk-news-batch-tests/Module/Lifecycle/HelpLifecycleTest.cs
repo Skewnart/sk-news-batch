@@ -1,3 +1,4 @@
+using sk_news_batch.Exception;
 using sk_news_batch.Module.Lifecycle;
 
 namespace sk_news_batch_tests.Module.Lifecycle
@@ -10,7 +11,7 @@ namespace sk_news_batch_tests.Module.Lifecycle
         {
             string[] args = { "-t" };
             var helpLifecycle = new HelpLifecycle();
-            Assert.ThrowsException<Exception>(() => helpLifecycle.CheckArgs(args));
+            Assert.ThrowsException<ProhibitedArgsException>(() => helpLifecycle.CheckArgs(args));
         }
     }
 }
