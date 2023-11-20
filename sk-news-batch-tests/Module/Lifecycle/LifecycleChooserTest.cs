@@ -5,6 +5,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
     [TestClass]
     public class LifecycleChooserTest
     {
+        /// <summary>
+        /// Check if Lifecycle choose actually choose accurately
+        /// </summary>
         [TestMethod]
         public void TestChoose()
         {

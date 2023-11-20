@@ -11,6 +11,10 @@ namespace sk_news_batch.Module.Lifecycle
 
         public void Execute() { }
 
+        /// <summary>
+        /// Here, logs are printed.
+        /// </summary>
+        /// <param name="args"></param>
         public void Init(string[] args)
         {
             Console.Write(
@@ -37,7 +41,6 @@ LOGS : -L [xxx]
 	-i : d'intégration
 	-v : mode verbeux"
 */
-
         }
     }
 }

@@ -6,6 +6,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
     [TestClass]
     public class TokenizerTest
     {
+        /// <summary>
+        /// Check if no token are found with empty argument array, and does not throw an exception.
+        /// </summary>
         [TestMethod]
         public void TestWithoutArguments()
         {
@@ -15,6 +18,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
             Assert.IsTrue(result.Length == 0);
         }
 
+        /// <summary>
+        /// Check if one token is found.
+        /// </summary>
         [TestMethod]
         public void TestWithOneArgument()
         {
@@ -24,8 +30,11 @@ namespace sk_news_batch_tests.Module.Lifecycle
             Assert.IsTrue(result.Length == 1);
         }
 
+        /// <summary>
+        /// Check if two ad three tokens are found.
+        /// </summary>
         [TestMethod]
-        public void TestWithTwoArguments()
+        public void TestWithTwoAndThreeArguments()
         {
             var args = "-T -u".StringSplitSpace();
             var result = new Tokenizer(args).GetTokens();
@@ -39,6 +48,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
             Assert.IsTrue("-u".Equals(result[2]));
         }
 
+        /// <summary>
+        /// Check sub-argument
+        /// </summary>
         [TestMethod]
         public void TestWithOneSubargument()
         {

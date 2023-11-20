@@ -7,6 +7,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
     [TestClass]
     public class VersionLifecycleTest
     {
+        /// <summary>
+        /// Check that an exception is thrown when a prohibited argument is given.
+        /// </summary>
         [TestMethod]
         public void TestVersionArgs()
         {
@@ -15,6 +18,9 @@ namespace sk_news_batch_tests.Module.Lifecycle
             Assert.ThrowsException<ProhibitedArgsException>(() => versionLifecycle.CheckArgs(args));
         }
 
+        /// <summary>
+        /// Check if a version information is available. (need to be)
+        /// </summary>
         [TestMethod]
         public void TestVersionNotNull()
         {

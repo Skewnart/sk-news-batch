@@ -10,6 +10,10 @@
             this.ReceivedArgs = args;
         }
 
+        /// <summary>
+        /// Retrieve tokens from the raw arguments
+        /// </summary>
+        /// <returns>Found tokens</returns>
         public string[] GetTokens()
         {
             if (tokens == null)

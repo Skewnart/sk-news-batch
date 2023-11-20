@@ -10,6 +10,12 @@ namespace sk_news_batch.Module.Lifecycle
         // //Commande pour lancer les TU/TI                u -> unitaires, i -> intégration, verb ou non       ' -T {-u|-i} [-v] '
         //Commande pour afficher l'helper               helper                                              ' -H '
 
+        /// <summary>
+        /// Find out specific Lifecycle to engage it, with help of given arguments.
+        /// </summary>
+        /// <param name="args">Given arguments</param>
+        /// <returns>The one. Lifecyle that fit with all arguments</returns>
+        /// <exception cref="MissingLifecycleException">When given arguments are wrong enough not to find the wanted command</exception>
         public static Lifecycle Choose(string[] args)
         {
             string command = args.FirstOrDefault();

@@ -2,6 +2,8 @@
 {
     public class VersionProvider
     {
+        /// ServiceProvider.VersionProvider.Version
+
         public Version Version { get; }
 
         private VersionProvider()
