@@ -26,13 +26,16 @@ HELP : -H
 
 LOGS : -L [xxx]
 	-L : Affiche les logs
-	[xxx] : Les xxx dernières lignes
+	[xxx] : Les xxx dernières lignes");
 
-TESTS : -T {-u|-i} [-v]
+/*
+@"TESTS : -T {-u|-i} [-v]
 	-T : Exécute les tests
 	-u : unitaires
 	-i : d'intégration
-	-v : mode verbeux");
+	-v : mode verbeux"
+*/
+
         }
     }
 }
