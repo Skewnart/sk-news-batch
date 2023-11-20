@@ -1,18 +1,11 @@
 using sk_news_batch.Extension;
 using sk_news_batch.Module.Lifecycle;
 
-namespace sk_news_batch_tests
+namespace sk_news_batch_tests.Module.Lifecycle
 {
     [TestClass]
-    public class TokenTest
+    public class TokenizerTest
     {
-        // ""
-        // "-V"
-        // "-T -u
-        // "-T -vu"
-        // "-T -u -v"
-        // "-L 110"
-
         [TestMethod]
         public void TestWithoutArguments()
         {
@@ -43,6 +36,7 @@ namespace sk_news_batch_tests
             result = new Tokenizer(args).GetTokens();
 
             Assert.IsTrue(result.Length == 3);
+            Assert.IsTrue("-u".Equals(result[2]));
         }
 
         [TestMethod]
@@ -52,6 +46,7 @@ namespace sk_news_batch_tests
             var result = new Tokenizer(args).GetTokens();
 
             Assert.IsTrue(result.Length == 2);
+            Assert.IsTrue("100".Equals(result[1]));
         }
     }
 }
