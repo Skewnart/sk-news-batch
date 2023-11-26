@@ -3,7 +3,7 @@
     public class Tokenizer
     {
         public string[] ReceivedArgs { get; private set; }
-        private string[] tokens = null;
+        private string[] _tokens = null;
 
         public Tokenizer(string[] args)
         {
@@ -16,7 +16,7 @@
         /// <returns>Found tokens</returns>
         public string[] GetTokens()
         {
-            if (tokens == null)
+            if (_tokens == null)
             {
                 List<string> tokenslist = new List<string>();
                 foreach(string arg in this.ReceivedArgs)
@@ -31,11 +31,11 @@
                         tokenslist.Add(arg);
                     }
                 }
-                
-                tokens = tokenslist.ToArray();
+
+                _tokens = tokenslist.ToArray();
             }
 
-            return tokens;
+            return _tokens;
         }
     }
 }
