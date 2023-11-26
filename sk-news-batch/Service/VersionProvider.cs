@@ -2,7 +2,7 @@
 {
     public class VersionProvider
     {
-        /// ServiceProvider.VersionProvider.Version
+        /// use : ServiceProvider.VersionProvider.Version
 
         public Version Version { get; }
 
@@ -12,7 +12,8 @@
         }
 
         private static VersionProvider instance;
-        public static VersionProvider GetInstance()
+        public static VersionProvider GetInstance() { return instance; }
+        public static VersionProvider SetInstance()
         {
             return instance ?? (instance = new VersionProvider());
         }
