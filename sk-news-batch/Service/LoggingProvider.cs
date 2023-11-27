@@ -1,4 +1,5 @@
-﻿using sk_news_batch.Module.TSDB;
+﻿using sk_news_batch.Modele;
+using sk_news_batch.Module.TSDB;
 
 namespace sk_news_batch.Service
 {
@@ -20,13 +21,13 @@ namespace sk_news_batch.Service
             return instance ?? (instance = new LoggingProvider(tsdbManager));
         }
 
-        public void LogStreamSiteCheck(string site, string version, bool checkpassed, string message)
+        public void LogStreamSiteCheck(Log log)
         {
             this.manager.Write(
                 "streamcheck",
-                new Dictionary<string, string>() { { "site", site }, { "version", version }, { "check", checkpassed ? "OK" : "KO" } },
-                new Dictionary<string, string>() { { "message", checkpassed ? "OK" : message } },
-                DateTime.UtcNow
+                new Dictionary<string, string>() { { "site", log.Site }, { "version", log.Version }, { "check", log.Checkpassed ? "OK" : "KO" } },
+                new Dictionary<string, string>() { { "message", log.Checkpassed ? "OK" : log.Message } },
+                log.Timestamp
                 );
         }
     }
