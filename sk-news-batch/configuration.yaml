@@ -1,0 +1,16 @@
+﻿newslifetime: 365
+lang: en
+tsdb:
+  type: influxdb
+  server: url
+  token: token
+  bucket: bucket name
+  org: org name
+#streamsites:
+#  - name : test
+#    version : 1.0
+#    actif: true
+#    pattern : randompattern
+#    type : xml
+#    endpoint : www.google.com/feed
+#    updated_at: 20231118-134554
