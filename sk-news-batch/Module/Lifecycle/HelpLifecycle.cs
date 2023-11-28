@@ -28,11 +28,13 @@ VERSION : -V
 	-V : Affiche la version
 
 HELP : -H
-	-H : Affiche l'aide
+	-H : Affiche l'aide");
 
+/*
 LOGS : -L [xxx]
 	-L : Affiche les logs
-	[xxx] : Les xxx dernières lignes");
+	[xxx] : Les xxx dernières lignes
+*/
 
 /*
 @"TESTS : -T {-u|-i} [-v]
