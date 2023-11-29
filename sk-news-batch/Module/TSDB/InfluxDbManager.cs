@@ -11,12 +11,11 @@ namespace sk_news_batch.Module.TSDB
         private readonly string _bucket;
         private readonly string _org;
 
-        //TODO Injecter la configuration depuis le fichier adéquat
-        public InfluxDbManager(/*configuration*/) {
-            _url = "http://corentinz.fr:8050";
-            _token = "UNxEDNDoSGClDruFxMDhX-rVjKaBnnZyMyayJQETezHs43C3DIte73qC9NaHocWt93xP-obAnZliqbXRv5G0YA==";
-            _bucket = "sk-news";
-            _org = "sk-corp";
+        public InfluxDbManager(Modele.TSDB tsdb_configuration) {
+            _url = tsdb_configuration.Server;
+            _token = tsdb_configuration.Token;
+            _bucket = tsdb_configuration.Bucket;
+            _org = tsdb_configuration.Organization;
         }
 
         /// <summary>
