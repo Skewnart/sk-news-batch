@@ -5,7 +5,7 @@ tsdb:
   server: url
   token: token
   bucket: bucket name
-  org: org name
+  organization: org name
 #streamsites:
 #  - name : test
 #    version : 1.0
