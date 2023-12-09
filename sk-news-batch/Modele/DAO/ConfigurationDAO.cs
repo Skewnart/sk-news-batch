@@ -16,7 +16,9 @@ namespace sk_news_batch.Modele.DAO
                 config = deserializer.Deserialize<Configuration>(yaml);
             }
             catch (SyntaxErrorException ex) { throw new SyntaxErrorException("Syntax error on configuration file."); }
-
+            catch (SemanticErrorException ex) { throw new SemanticErrorException("Semantic error on configuration file. (identation ?)"); }
+            
+                
             if (config == null) throw new EmptyConfigurationException();
 
             return config!;
