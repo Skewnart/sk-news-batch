@@ -33,9 +33,9 @@ namespace sk_news_batch
             {
                 Console.WriteLine($"Bad command.\n{pae.Message}");
             }
-            catch (MissingLifecycleException mle)
+            catch (System.Exception ex)
             {
-                Console.WriteLine(mle.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

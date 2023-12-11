@@ -6,7 +6,7 @@ namespace sk_news_batch.Module.Lifecycle
     {
         public void CheckArgs(string[] args)
         {
-            if (args?.Length > 0) throw new ProhibitedArgsException("Helper lifecycle");
+            if (args?.Length > 0) throw new CantHaveArgsException("Helper lifecycle");
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace sk_news_batch_tests.Module.Lifecycle
         {
             string[] args = { "-t" };
             var helpLifecycle = new HelpLifecycle();
-            Assert.ThrowsException<ProhibitedArgsException>(() => helpLifecycle.CheckArgs(args));
+            Assert.ThrowsException<CantHaveArgsException>(() => helpLifecycle.CheckArgs(args));
         }
     }
 }

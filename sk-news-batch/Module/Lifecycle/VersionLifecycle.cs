@@ -7,7 +7,7 @@ namespace sk_news_batch.Module.Lifecycle
     {
         public void CheckArgs(string[] args)
         {
-            if (args?.Length > 0) throw new ProhibitedArgsException("Version lifecycle");
+            if (args?.Length > 0) throw new CantHaveArgsException("Version lifecycle");
         }
 
         public void Init(string[] args) { }
