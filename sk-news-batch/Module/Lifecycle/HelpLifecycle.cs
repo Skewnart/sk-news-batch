@@ -9,13 +9,10 @@ namespace sk_news_batch.Module.Lifecycle
             if (args?.Length > 0) throw new ProhibitedArgsException("Helper lifecycle");
         }
 
-        public void Execute() { }
-
         /// <summary>
         /// Here, logs are printed.
         /// </summary>
-        /// <param name="args"></param>
-        public void Init(string[] args)
+        public void Execute()
         {
             Console.Write(
 @"CHECK : -C {-c|-f} [-v]
@@ -29,7 +26,9 @@ VERSION : -V
 
 HELP : -H
 	-H : Affiche l'aide");
+        }
 
+        public void Init(string[] args) { }
 /*
 LOGS : -L [xxx]
 	-L : Affiche les logs
@@ -43,6 +42,5 @@ LOGS : -L [xxx]
 	-i : d'intégration
 	-v : mode verbeux"
 */
-        }
     }
 }
