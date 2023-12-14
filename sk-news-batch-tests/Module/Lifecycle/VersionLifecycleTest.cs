@@ -24,7 +24,8 @@ namespace sk_news_batch_tests.Module.Lifecycle
         [TestMethod]
         public void TestVersionNotNull()
         {
-            Assert.IsNotNull(ServiceProvider.VersionProvider.Version);
+            VersionProvider.SetInstance();
+            Assert.IsNotNull(VersionProvider.GetInstance().Version);
         }
     }
 }

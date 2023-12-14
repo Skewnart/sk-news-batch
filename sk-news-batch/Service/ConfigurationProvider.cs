@@ -26,6 +26,12 @@ namespace sk_news_batch.Service
             return instance ?? (instance = new ConfigurationProvider(configuration_path ?? DEFAULTCONFIGURATIONPATH));
         }
 
+        /// <summary>
+        /// Load configuration from config file or default if does not exist
+        /// </summary>
+        /// <exception cref="PathNotProvidedException"></exception>
+        /// <exception cref="FileNotFoundException"></exception>
+        /// <exception cref="EmptyConfigurationException"></exception>
         private void loadConfiguration()
         {
             if (_configuration_path == null) throw new PathNotProvidedException("Configuration file");
