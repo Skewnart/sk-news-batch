@@ -5,6 +5,9 @@ namespace sk_news_batch.Module.Lifecycle
 {
     public class CheckLifecycle : Lifecycle
     {
+        public CheckType Type { get; set; }
+        public bool IsVerbose { get; set; }
+
         public void CheckArgs(string[] args)
         {
             if (args?.Length == 0) throw new NoArgsException("Check lifecycle");
@@ -27,7 +30,14 @@ namespace sk_news_batch.Module.Lifecycle
 
         public void Init(string[] args)
         {
-            throw new NotImplementedException();
+            this.Type = args.Contains("-c") ? CheckType.Configuration : CheckType.Stream;
+            this.IsVerbose = args.Contains("-v");
         }
+    }
+
+    public enum CheckType
+    {
+        Configuration,  //configuration integrity
+        Stream          //stream usage
     }
 }
