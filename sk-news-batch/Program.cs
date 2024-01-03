@@ -14,8 +14,8 @@ namespace sk_news_batch
             }
             catch(System.Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("An error occured while loading services. Program must end.");
+                Console.Error.WriteLine(ex.Message);
+                Console.Error.WriteLine("An error occured while loading services. Program must end.");
                 return;
             }
 
@@ -27,15 +27,15 @@ namespace sk_news_batch
                 lifecycle.Execute();
             }
             catch(NotImplementedException) {
-                Console.WriteLine("Used command is not implemented yet.");
+                Console.Error.WriteLine("Used command is not implemented yet.");
             }
             catch (ProhibitedArgsException pae)
             {
-                Console.WriteLine($"Bad command.\n{pae.Message}");
+                Console.Error.WriteLine($"Bad command.\n{pae.Message}");
             }
             catch (System.Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.Error.WriteLine(ex.Message);
             }
         }
     }
