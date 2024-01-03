@@ -1,10 +1,12 @@
-﻿namespace sk_news_batch.Module.Lifecycle
+﻿using sk_news_batch.Exception;
+
+namespace sk_news_batch.Module.Lifecycle
 {
-    internal class ParseRSSStreamLifecycle : Lifecycle
+    public class ParseRSSStreamLifecycle : Lifecycle
     {
         public void CheckArgs(string[] args)
         {
-            throw new NotImplementedException();
+            if (args?.Length > 0) throw new CantHaveArgsException("Parse RSS Stream lifecycle");
         }
 
         public void Execute()
@@ -14,7 +16,7 @@
 
         public void Init(string[] args)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
