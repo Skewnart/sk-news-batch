@@ -12,6 +12,9 @@ namespace sk_news_batch.Module.TSDB
         private readonly string _org;
 
         public InfluxDbManager(Modele.TSDB tsdb_configuration) {
+
+            if (tsdb_configuration == null) throw new System.Exception("TSDB configuration is empty. Please fix it in the configuration file according to the documentation.");
+
             _url = tsdb_configuration.Server;
             _token = tsdb_configuration.Token;
             _bucket = tsdb_configuration.Bucket;

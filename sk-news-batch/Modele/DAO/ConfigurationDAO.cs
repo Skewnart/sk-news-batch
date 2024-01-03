@@ -17,6 +17,7 @@ namespace sk_news_batch.Modele.DAO
             }
             catch (SyntaxErrorException ex) { throw new SyntaxErrorException("Syntax error on configuration file."); }
             catch (SemanticErrorException ex) { throw new SemanticErrorException("Semantic error on configuration file. (identation ?)"); }
+            catch (YamlException ex) { throw ex; } //In case of I change my mind on the thrown error
             
                 
             if (config == null) throw new EmptyConfigurationException();
