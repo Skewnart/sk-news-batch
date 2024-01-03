@@ -8,7 +8,7 @@
 
         private VersionProvider()
         {
-            Version = new(0, 3, 1);
+            Version = new(0, 4, 0);
         }
 
         private static VersionProvider instance;
